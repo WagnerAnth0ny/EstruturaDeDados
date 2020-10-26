@@ -110,9 +110,6 @@ for x in range(100):
 
     pilha.push(Data_match(match, get_randoms(match)))
 
-#Print the size of of the stack
-print("Tamanho da pilha: " + str(pilha.size))
-
 #Print 100 match_id from the stack
 for x in range(100):
 
