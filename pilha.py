@@ -3,6 +3,8 @@ import random
 
 class Data_match:
 
+    #This method saves the data from the dataframe
+
     def __init__(self, data, position):
         self.id = data['id'][position]
         self.league_id = data['league_id'][position]
@@ -32,15 +34,6 @@ class Stack:
     def __init__(self):
         self.head = Node("head")
         self.size = 0
-
-    #string representation of stack
-    def __str__(self):
-        current = self.head.next
-        out = ""
-        while current:
-           out += str(current.value) + "->"
-           current = current.next
-        return out[:-3]
 
     #get size of stack
     def getSize(self):
@@ -92,10 +85,15 @@ class Stack:
         return remove.value
 
 def get_randoms(data):
+    #This function returns an aleatory int smaller than the lenght of the dataset
 
+    #Get the lenght of the dataset
     l = len(data['id']) - 1
+
+    #Return an aleatory int
     return random.randint(0, l)
 
+#Get the data of the csv and put it in a dataframe of pandas library
 match = pd.read_csv('match.csv')
 country = pd.read_csv('country.csv')
 league = pd.read_csv('league.csv')
@@ -104,14 +102,18 @@ player_attributes = pd.read_csv('player_attributes.csv')
 team = pd.read_csv('team.csv')
 team_attributes = pd.read_csv('team_attributes.csv')
 
+#Creat the stack
 pilha = Stack()
 
+#Put the data in the stack
 for x in range(100):
 
     pilha.push(Data_match(match, get_randoms(match)))
 
+#Print the size of of the stack
 print("Tamanho da pilha: " + str(pilha.size))
 
+#Print 100 match_id from the stack
 for x in range(100):
 
     print(pilha.get(x).match_api_id)
