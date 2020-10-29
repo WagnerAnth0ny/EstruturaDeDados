@@ -35,8 +35,12 @@ for x in range(pilha.getSize()):
 
 print(" ")
 
+#print(my_stack.find_position(pilha,int(input("Digite um id: "))))
+
 #Modify the data in the given position
-my_stack.modify(pilha,my_stack.Data_match(match, get_randoms(match)),3)
+my_stack.modify(pilha,my_stack.Data_match(match, get_randoms(match)), int(input("Digite um id: ")))
+
+print(" ")
 
 #Print 100 match_id from the stack
 for x in range(pilha.getSize()):

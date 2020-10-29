@@ -81,8 +81,15 @@ def get(pilha, position):
         pilha.push(l.get(x))
     return element
 
+#This function find a position of an given id
+def find_position(pilha, id):
+    for x in range(pilha.getSize()):
+        if get(pilha, x).match_api_id == id:
+            return x
+
 #This function modify the data in the given position
-def modify(pilha, new_data, position):
+def modify(pilha, new_data, id):
+    position = find_position(pilha, id)
     l = my_linked_list.Linked_list()
     i = 0
     while i < position:

@@ -36,7 +36,7 @@ for x in range(lista.size()):
 print(" ")
 
 #Modify the data in the given position
-lista.modify(my_linked_list.Data_match(match,get_randoms(match)), 3)
+#lista.modify(my_linked_list.Data_match(match,get_randoms(match)), 3)
 
 #Print 100 match_id from the list
 for x in range(lista.size()):
@@ -48,6 +48,11 @@ print(" ")
 #Print the size of the list
 print("Size of the list: " + str(lista.size()))
 
+#Delete the node with the given id
+lista.pop(int(input("digite um id para excluir: ")))
+
+#Print the size of the list
+print(lista.size())
 
 
 

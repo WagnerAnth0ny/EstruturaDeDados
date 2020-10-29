@@ -67,21 +67,31 @@ class Linked_list:
             i += 1
         return cur.data
 
-    #Mofify a element of the list
-    def modify(self, new_data, position):
+    #Find the position of a given id
+    def findPosition(self, id):
+        i = 0
+        while i < self.size():
+            if self.get(i).match_api_id == id:
+                break
+            i += 1
+        return i
+
+    # Mofify a element of the list
+    def modify(self, new_data, id):
+
         i = 0
         cur = self.head.next
-        while i < position:
+        while i < self.findPosition(id) + 1:
             cur = cur.next
             i += 1
         cur.data = new_data
 
-    #Remove a element of the list
-    def pop(self, position):
+    # Remove a element of the list
+    def pop(self, id):
         i = 0
         cur = self.head.next
         prev = self.head
-        while i < position:
+        while i < self.findPosition(id) + 1:
             prev = cur
             cur = cur.next
             i += 1
