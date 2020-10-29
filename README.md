@@ -7,5 +7,5 @@ The dataset used can be found in: https://www.kaggle.com/hugomathien/soccer
 Team :  
 Rafael Emilio Lima Alves,
 Rick Martím Lino da Silva,
-João vitor santos tavares,
+João Vitor Santos Tavares,
 Wagner Anthony de Medeiros Silva.
