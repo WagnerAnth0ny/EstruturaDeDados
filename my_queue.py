@@ -84,55 +84,7 @@ class Queue:
                 break
             cur = cur.next
 
-    #Sort the queue by the match_api_id
-    def _sortMatchApiID(self, cur, size, i):
-        if i < size:
 
-            c_id = cur.data.match_api_id
-            cn_id = cur.next.data.match_api_id
-
-            if c_id > cn_id:
-
-                cur.data, cur.next.data = cur.next.data, cur.data
-
-            self._sortMatchApiID(cur.next, size, i + 1)
-
-    #Sort the queue by the league_id
-    def _sortLeagueID(self, cur, size, i):
-        if i < size:
-
-            c_id = cur.data.league_id
-            cn_id = cur.next.data.league_id
-
-            if c_id > cn_id:
-                cur.data, cur.next.data = cur.next.data, cur.data
-
-            self._sortLeagueID(cur.next, size, i + 1)
-
-    #Sort the data by id
-    def _sortID(self, cur, size, i):
-        if i < size:
-
-            c_id = cur.data.id
-            cn_id = cur.next.data.id
-
-            if c_id > cn_id:
-                cur.data, cur.next.data = cur.next.data, cur.data
-
-            self._sortID(cur.next, size, i + 1)
-
-    #Select wich sort function will be used
-    def sortMatch(self, parameter = None):
-
-        if parameter == "id":
-            for i in range(self.size):
-                self._sortID(self.head.next, self.size - 1, 0)
-        elif parameter == "league_id":
-            for i in range(self.size):
-                self._sortLeagueID(self.head.next, self.size - 1, 0)
-        else:
-            for i in range(self.size):
-                self._sortMatchApiID(self.head.next, self.size - 1, 0)
 
 
 

@@ -27,9 +27,6 @@ fila = my_queue.Queue()
 for x in range(100):
     fila.enqueue(my_queue.Data_match(match, get_randoms(match)))
 
-#Sort the queue by the match_api_id
-fila.sortMatch()
-
 for x in range(fila.getSize()):
     print(fila.get(x).match_api_id)
 
