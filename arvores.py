@@ -20,20 +20,37 @@ player_attributes = pd.read_csv('player_attributes.csv')
 team = pd.read_csv('team.csv')
 team_attributes = pd.read_csv('team_attributes.csv')
 
+#Create the tree
 tree = my_tree.BinaryTree()
 
+#Put the data in the tree
 for x in range(100):
     tree.insert(my_tree.Data_match(match,get_randoms(match)))
 
-
+#Print the tree using match_api_id as parameter
 tree.printTree()
 
 print(" ")
 
+#Modify one node in the tree
 tree.modify(int(input("Digite um id: ")), my_tree.Data_match(match, get_randoms(match)))
 
 print(" ")
 
+#Print the tree using match_api_id as parameter
+tree.printTree()
+
+#Sort the tree by id
+tree.sortTree("id")
+
+print(" ")
+
+#Print the tree using the id as parameter
+tree.printTree("id")
+
+print(" ")
+
+#Print the tree using match_api_id as parameter
 tree.printTree()
 
 
