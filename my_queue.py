@@ -58,13 +58,6 @@ class Queue:
     def getSize(self):
         return self.size
 
-    #Print the queue
-    def print(self):
-        cur = self.head.next
-        for x in range(self.size):
-            print(cur)
-            cur = cur.next
-
     #Get the data in a given position of the queue
     def get(self, position):
         i = 0

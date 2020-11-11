@@ -27,6 +27,18 @@ fila = my_queue.Queue()
 for x in range(100):
     fila.enqueue(my_queue.Data_match(match, get_randoms(match)))
 
+#Print the queue
+for x in range(fila.getSize()):
+    print(fila.get(x).match_api_id)
+
+print(" ")
+
+#Modify a given node of the queue
+fila.modify(int(input("Digite um matchID: ")), my_queue.Data_match(match ,get_randoms(match)))
+
+print(" ")
+
+#Print the queue
 for x in range(fila.getSize()):
     print(fila.get(x).match_api_id)
 
