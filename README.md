@@ -4,6 +4,8 @@ Project requested by the data structure course, with the objective of implementi
 
 The dataset used can be found in: https://www.kaggle.com/hugomathien/soccer
 
+The dataset used in the graph code can be found in: https://www.kaggle.com/crowdflower/twitter-user-gender-classification
+
 Team :  
 Rafael Emilio Lima Alves,
 Rick Martím Lino da Silva,
