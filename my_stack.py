@@ -1,4 +1,5 @@
 import my_linked_list
+import pandas as pd
 
 class Data_match:
 
@@ -21,6 +22,17 @@ class Data_match:
         self.cross = data['cross'][position]
         self.corner = data['corner'][position]
         self.possession = data['possession'][position]
+        self.away_team_name = self.findName(self.away_team_api_id)
+        self.home_team_name = self.findName(self.home_team_api_id)
+
+    def findName(self, id):
+        team_csv = pd.read_csv('team.csv')
+
+        l = len(team_csv['id']) - 1
+
+        for t in range(l):
+            if team_csv['team_api_id'][t] == id:
+                return (team_csv['team_short_name'][t])
 
 class Node:
     def __init__(self, value):

@@ -41,7 +41,7 @@ print(" ")
 #Print 100 match_id from the list
 for x in range(lista.size()):
 
-    print(lista.get(x).match_api_id)
+    print(lista.get(x).match_api_id , end=" X ")
 
 print(" ")
 
