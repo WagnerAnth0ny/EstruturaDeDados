@@ -1,0 +1,38 @@
+#### LINKED LIST ############################################################################################################
+	In simple words, a linked list consists of nodes where each node contains a data field and a reference(link)
+to the next node in the list.
+
+Learn more about it at the source: https://www.geeksforgeeks.org/data-structures/linked-list/
+
+#### QUEUE ##################################################################################################################
+
+	A Queue is a linear structure which follows a particular order in which the operations are performed. 
+The order is First In First Out (FIFO). A good example of a queue is any queue of consumers for a resource 
+where the consumer that came first is served first. 
+
+Learn more about it at the source: https://www.geeksforgeeks.org/queue-data-structure/
+
+#### STACK ##################################################################################################################
+
+	Stack is a linear data structure which follows a particular order in which the operations are performed. 
+The order may be LIFO(Last In First Out) or FILO(First In Last Out).
+
+Learn more about it at the source: https://www.geeksforgeeks.org/stack-data-structure-introduction-program/
+
+#### BINARY TREE ############################################################################################################
+
+	A tree whose elements have at most 2 children is called a binary tree. Since each element in a binary tree
+can have only 2 children, we typically name them the left and right child.
+	A Binary Tree node contains following parts:
+    Data
+    Pointer to left child
+    Pointer to right child
+
+Learn more about it at the source: https://www.geeksforgeeks.org/binary-tree-data-structure/
+
+#### GRAPH ##################################################################################################################
+
+	A Graph is a non-linear data structure consisting of nodes and edges. The nodes are sometimes also
+referred to as vertices and the edges are lines or arcs that connect any two nodes in the graph.
+
+Learn more about it at the source: https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/
