@@ -46,6 +46,7 @@ class BinaryTree:
     # Initializing the tree
     def __init__(self):
         self.root = Node()
+        self.bnode = None
 
     #Insert a new node in the tree using match_api_id as parameter
     def _insertMatchID(self, newData, cur):
@@ -261,6 +262,18 @@ class BinaryTree:
                 self._getSubTreeID(right_node)
                 self._getSubTreeID(left_node)
 
+    #This method modify the self.bnode
+    def _getNodeMatchID(self, cur, id):
+        if cur != None:
+            self._getNodeMatchID(cur.left, id)
+            if id == cur.data.match_api_id:
+                self.bnode = cur
+            self._getNodeMatchID(cur.right, id)
+
+    #This method find a node by a given id
+    def getNode(self, id):
+        if self.root != None:
+            self._getNodeMatchID(self.root, id)
 
 
 
