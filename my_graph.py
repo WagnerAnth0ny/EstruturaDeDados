@@ -133,6 +133,61 @@ class Graph:
         for n in path:
             print(n.unit_id)
 
+    def short_path_if(self, first_node, final_node):
+
+        src = self.get_node(first_node)
+        dest = self.get_node(final_node)
+        path = []
+        map = self.graph
+        black_list = []
+
+        cur = src
+        prev = None
+        prevv = prev
+
+        for n in range(200):
+
+            minor = None
+            minor_d = 99999999999999999999999999
+
+            if cur == dest:
+                break
+
+            elif map[cur] != []:
+                for x in map[cur]:
+                    if x not in path:
+                        if get_distance(x.vector, dest.vector) < minor_d:
+                            minor = x
+                            minor_d = get_distance(x.vector, dest.vector)
+
+                path.append(cur)
+                prevv = prev
+                prev = cur
+                cur = minor
+
+            else:
+                if cur != src:
+                    black_list.append(prev)
+                    map[prevv].remove(prev)
+                    cur = src
+                    path = []
+                else:
+                    break
+
+        path.append(self.get_node(final_node))
+        path_str = ""
+        for n in path:
+            path_str = (path_str + "-> " + str(n.unit_id))
+        text = ("Menor Distancia: "+ str(len(path) - 1)+"\n\nCaminho Percorrido:\n\n" + path_str)
+        print("Distancia: ", end=" ")
+        print(len(path))
+        print(" ")
+        print("Caminho:")
+
+
+
+        return text
+
     #Thus method print the nodes of the graph
     def print(self):
         print("Numero de nos:", end=" ")

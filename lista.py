@@ -11,7 +11,7 @@ def get_randoms(data):
     # Return an aleatory int
     return random.randint(0, l)
 
-#Get the data of the csv and put it in a dataframe of pandas library
+#Get the data of the csv and put it in a dataframe of palista.pyndas library
 match = pd.read_csv('match.csv')
 country = pd.read_csv('country.csv')
 league = pd.read_csv('league.csv')
@@ -24,7 +24,7 @@ team_attributes = pd.read_csv('team_attributes.csv')
 lista = my_linked_list.Linked_list()
 
 #Put the data in the list
-for x in range(100):
+for x in range(1060):
 
     lista.push(my_linked_list.Data_match(match,get_randoms(match)))
 
@@ -41,7 +41,7 @@ print(" ")
 #Print 100 match_id from the list
 for x in range(lista.size()):
 
-    print(lista.get(x).match_api_id , end=" X ")
+    print(lista.get(x).match_api_id)
 
 print(" ")
 
@@ -50,6 +50,7 @@ print("Size of the list: " + str(lista.size()))
 
 #Delete the node with the given id
 lista.pop(int(input("digite um id para excluir: ")))
+
 
 #Print the size of the list
 print(lista.size())

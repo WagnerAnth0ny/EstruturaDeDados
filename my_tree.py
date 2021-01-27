@@ -31,7 +31,8 @@ class Data_match:
 
         for t in range(l):
             if team_csv['team_api_id'][t] == id:
-                return (team_csv['team_short_name'][t])
+                return (team_csv['team_long_name'][t])
+
 
 class Node:
     def __init__(self, data = None):
@@ -106,6 +107,7 @@ class BinaryTree:
                 self._insertMatchID(newData, self.root)
 
     #Print the tree using match_api_id as parameter
+
     def _printTreeMatchID(self, cur):
         if cur != None:
             self._printTreeMatchID(cur.left)
@@ -252,6 +254,7 @@ class BinaryTree:
             left_node = self.root.left
             self.root.right = None
             self.root.left = None
+            print(parameter)
             if parameter == "match_api_id":
                 self._getSubTreeMatchID(right_node)
                 self._getSubTreeMatchID(left_node)

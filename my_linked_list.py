@@ -1,5 +1,4 @@
 import pandas as pd
-
 class Data_match:
 
     #This method saves the data from the dataframe
@@ -31,7 +30,8 @@ class Data_match:
 
         for t in range(l):
             if team_csv['team_api_id'][t] == id:
-                return(team_csv['team_short_name'][t])
+                return (team_csv['team_long_name'][t])
+
 
 class Node:
 
@@ -80,6 +80,14 @@ class Linked_list:
             i += 1
         return cur.data
 
+    def get_next(self, position):
+        i = 0
+        cur = self.head.next
+        while i < position:
+            cur = cur.next
+            i += 1
+        return cur.next
+
     #Find the position of a given id
     def findPosition(self, id):
         i = 0
@@ -100,6 +108,19 @@ class Linked_list:
         cur.data = new_data
 
     # Remove a element of the list
+
+    def pop_if(self, id):
+        i = 0
+        cur = self.head.next
+        prev = self.head
+        while i < self.findPosition(id):
+            prev = cur
+            cur = cur.next
+            i += 1
+        prev.next = cur.next
+
+        return cur.data
+
     def pop(self, id):
         i = 0
         cur = self.head.next
@@ -111,6 +132,4 @@ class Linked_list:
         prev.next = cur.next
 
         return cur.data
-
-
 

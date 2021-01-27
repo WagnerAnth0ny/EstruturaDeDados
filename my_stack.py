@@ -32,7 +32,7 @@ class Data_match:
 
         for t in range(l):
             if team_csv['team_api_id'][t] == id:
-                return (team_csv['team_short_name'][t])
+                return (team_csv['team_long_name'][t])
 
 class Node:
     def __init__(self, value):
