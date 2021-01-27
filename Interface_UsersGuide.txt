@@ -1,0 +1,96 @@
+##### BANCOS DE DADOS: 
+
+Os bancos de dados acessados e utilizados para construir essas estruturas foram determinados pelo professor. 
+Para as estruturas de lista, pila, fila e árvore binária foi utilizada uma base de dados com informações referentes 
+a partidas de futebol realizadas na Europa e dados de apostas ligadas às mesmas.
+ 
+As informações armazenadas nós nós são:
+id, id da liga, id da partida, temporada, data, id do time da casa, id do time de fora, gols, tiros diretos, tiros
+indiretos, faltas, cartões, cruzamentos, escanteios, posse de bola, nome do time da casa, nome do time de fora.
+A base pode ser encontrada em:
+https://www.kaggle.com/hugomathien/soccer
+
+Para o grafo, nos foi designada uma base de dados de perfis de twitter, pela qual o objetivo era conseguir através do
+uso de machine learning, interpretar as informações e definir o gênero de cada perfil.
+
+Os dados armazenados em cada vetor são:
+a composição vetorial de quatro dimensões, id da unidade, marcador golden, estado da unidade, julgamentos confiáveis
+último julgamento, gênero, confiança de gênero, descrição, número de favoritos, gênero gold, cor da conexão, nome,
+marcador gold do perfil, imagem de perfil, contagem de retweet, cor da sidebar, texto, coordenadas do twitter, 
+número de tweets, tweets criados, id dos tweets, localização do twitter, fuso horário do twitter.
+A base de dados pode ser acessada em:
+https://www.kaggle.com/crowdflower/twitter-user-gender-classification
+
+
+
+##### JANELAS:
+As janelas da nossa interface referentes a cada estrutura se baseia em um design horizontal, onde a metade esquerda
+é referente à criação e exbição de cada estrutura e o lado direito refere-se a análise e manipulação de cada item.
+
+
+
+##### MENU PRINCIPAL:
+Essa é a primeira janela que surge ao usuário, a partir dela é possível navegar por cada uma das estruturas tratadas 
+no projeto, as quais são contempladas em outras janelas. Além disso há uma janela de síntese de informações referentes 
+ao projeto, pela qual o usuário pode acessar o nosso github e ter acesso a dados mais completos.
+
+
+
+##### FUNÇÕES GERAIS:
+Essa sessão explica as funções que são de uso comum de cada estrutura, entretanto respeitando a identidade e integridade
+de cada uma dessas estruturas, dentre essas funções estão:
+
+CRIAR A ESTRUTURA: 
+Essas funções pegam a entrada fornecida pelo usuário referente ao número de elementos que ele deseja na estrutura. Após 
+isso, ele gera a estrutura com a quantidade de itens especificada e a exibe em uma listbox que além de exibir a estrutura,
+fornece uma interação mais fácil com o usuário. 
+Em todas as estruturas a exibição segue o mesmo padrão, com exceção da pilha, onde os itens são exibidos em ordem decrescente
+para deixar evidente a estrutura intrínseca da pilha, e na árvore binária onde os itens são exibidos em pré ordem.
+
+ADICIONAR ELEMENTOS À ESTRUTURA:
+Adiciona um elemento à estrutura respeitando a integridade de dados de cada uma.
+Na pilha ele adiciona ao topo, na árvore o no pode ser inserido em qualquer posição, a depender da disposição dos outros nós,
+enquanto no restante o elemento é adicionado sempre no fim.
+
+REMOVER ELEMENTOS DA ESTRUTURA:
+Essa função já demonstra um pouco mais as particularidades de cada estrutura. Na lista, no grafo e na árvore é possível selecionar
+remover qualquer elemento (a exceção da raiz da árvore binária.). Entretanto na pilha e na fila, não é possível selecionar qualquer
+elemento, sendo assim a remoção é sempre do elemento que é permitido o acesso. No caso da fila é a cabeça e no caso da pilha é o topo.
+
+OBTER INFORMAÇÕES DOS ELEMENTOS NA ESTRUTURA:
+O acesso às informações é análogo ao acesso da função de remover, sendo assim na pilha e na fila se mantém a restrição de acesso
+do topo e da cabeça, enquanto nas outras estruturas qualquer elemento pode ser acessado. As informações são exibidas em uma 
+text box formatada, onde o usuário obterá informações sobre alguns dados armazenados no nó, bem como informações acerca da estrutura.
+Válido citar que os dados exibidos são apenas os amigáveis ao usuário, embora o nó em questão armazene muitos mais dados. 
+
+
+
+##### FUNÇÕES DE USO ESPECÍFICO:
+Essas funções são usadas apenas por algumas estruturas, pois o intuito das mesmas é atender as exigências acadêmicas da implementação
+de cada estrutura ou a uma especificidade da estrutura. Dentre elas estão:
+
+FUNÇÃO DE PESQUISA:
+Essa função é exclusiva da árvore e do grafo. Pois nessas estruturas existe uma conexão mais complexa entre seus nós que não condiz
+com a exibição feira na listbox.
+Exemplo: o vetor 5 adicionado ao grafo pode estar conectado ao vetor 327, sendo assim, mesmo com a função de obter informações 
+exibindo as conexões, pra o usuário descobrir onde o nó se encontra, faz-se necessário essa função de busca.
+O mesmo pode ser aplicável a árvore, já que os dados estão em pré ordem e não é tão fácil visualizar conexões, principalmente referentes
+aos nós filhos da direita. Sendo assim, na função search, o usuário escreve na entrybox o nó que deseja encontrar e o mesmo, se estiver
+na estrutura, é procurado na listbox e selecionado. Caso ele eeteja fora da área de exibição, automaticamente o scroll ira descer até ele
+estar centralizado verticalmente na exibição da listbox.
+
+FUNÇÃO DE ORDENAÇÃO:
+Todas as estruturas, com exceção do grafo (que utiliza outro banco de dados) exibe os ids das partidas de futebol armazenadas na api,
+os quais também guiam a criação das estruturas e no caso das árvores, o equilíbrio da distribuição de seus nós. Entretanto uma das 
+especificidades declaradas pelo professor na implementação da árvore binária era haver uma forma de reordenar a árvore através de outros 
+dois atributos numéricos. Sendo assim, na janela da árvore existe a possibilidade de reordená-la de acordo com outros dois atributos: 
+o id da liga da partida e o id da partida segundo umabdas aplicações de apostas. Como a exibição na listbox da árvore segue sendo 
+referente ao ID original, então é possível visualizar claramente a alteração que a estrutura sofre.
+
+FUNÇÃO DE MENOR CAMINHO:
+A função de menor caminho é uma especificidade totalmente necessária na implementação de grafo. Através dela o usuário será direcionado
+a uma nova janela pela qual ele digita o valor de dois vetores do grafo e (se os mesmos se encontrarem na extrutura) será exibido logo
+abaixo a menor distância entre os nós, bem como o caminho que alcançou esse menor caminho.
+Válido citar que essa distância é abstraída para o usuario, representando apenas a ponderação 1 de cada aresta percorrida. Pois a 
+distância real, baseada em cálculos vetoriais de quatro dimensões, não é um valor intuitivo ao usuário, sendo assim essa é uma forma de 
+exibir a distância de uma forma que o usuário a perceba.
